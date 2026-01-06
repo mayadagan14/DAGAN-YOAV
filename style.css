@@ -827,7 +827,7 @@
    ========================= */
 
 body.contact-page{
-    background: linear-gradient(180deg, #225634 0%, #d7dcda 70%, #b8cec0 100%);
+    background: linear-gradient(180deg, #2f553c 0%, #d7dcda 0%, #b8cec0 0%);
   }
   
   body.contact-page .section{
@@ -1807,4 +1807,173 @@ body.service-consulting{
     color: #18ec66; /* ירוק וואטסאפ */
     vertical-align: middle;
   }
+  /* =========================
+   MOBILE / TABLET RESPONSIVE
+   ========================= */
+
+/* טאבלט */
+@media (max-width: 1024px){
+
+    .container{
+      width: min(960px, 92%);
+    }
+  
+    /* Services: 2 בעמודה */
+    .services-grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    /* Process layout: עמודה אחת */
+    .process-layout{
+      grid-template-columns: 1fr;
+    }
+  
+    .process-right{
+      position: static;
+      top: auto;
+    }
+  
+    .process-left{
+      justify-content: center;
+    }
+  }
+  
+  /* מובייל */
+  @media (max-width: 700px){
+  
+    /* HEADER */
+    .header-inner{
+      grid-template-columns: 1fr auto auto;
+      gap: 10px;
+      padding: 10px 0;
+    }
+    .logo-img{ height: 36px; }
+  
+    /* HERO */
+    .hero{
+      padding: 18px 0 22px;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    /* במקום שני אלמנטים ש”מתנגשים”, נעבור לפריסה אנכית */
+    .hero-inner{
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+  
+    /* הקופסה במרכז וברוחב כמעט מלא */
+    .hero-box{
+      width: 92%;
+      padding: 20px 18px;
+      border-radius: 22px;
+    }
+  
+    /* הכותרת הלבנה – שימי אותה במרכז למעלה */
+    .hero-top-title{
+      left: 50%;
+      top: 12px;
+      transform: translateX(-50%);
+      font-size: 16px;
+      text-align: center;
+      width: 92%;
+      line-height: 1.4;
+    }
+  
+    /* התמונה בצד ימין: במובייל עדיף לבטל absolute */
+    .hero-image{
+      position: static;
+      height: auto;
+      padding: 0;
+      width: 92%;
+      margin-top: 8px;
+    }
+  
+    /* SERVICES */
+    .services-preview{
+      padding: 80px 0 100px;
+    }
+  
+    .services-title{
+      font-size: 26px;
+      margin-bottom: 22px;
+    }
+  
+    .services-grid{
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  
+    .service-box{
+      height: auto;            /* אל תשאירי גובה קבוע במובייל */
+      padding-bottom: 70px;
+    }
+  
+    .service-btn{
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 14px;
+    }
+  
+    /* PROCESS DIAGRAM: להפוך לגמיש */
+    .process-diagram{
+      width: min(560px, 92vw);
+      height: 360px;
+      margin: 24px auto;
+      --r: 145px; /* להקטין רדיוס במובייל */
+    }
+  
+    .step-btn{
+      width: 120px;
+      height: 82px;
+    }
+  
+    .circle-center{
+      width: 120px;
+      height: 120px;
+    }
+  
+    .process-card{
+      padding: 16px;
+      border-radius: 18px;
+    }
+  
+    .process-content{
+      max-height: none;
+      overflow: visible;
+    }
+  
+    /* NOTE */
+    .process-note{
+      font-size: 15px;
+      padding: 14px 16px;
+    }
+  
+    /* FOOTER EXTRA */
+    .footer-extra-inner{
+      height: auto;
+      padding: 12px 14px;
+      font-size: 15px;
+      gap: 10px 14px;
+    }
+  
+    .wa-icon{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  /* ממש קטן (טלפונים קטנים) */
+  @media (max-width: 420px){
+    .process-diagram{
+      height: 330px;
+      --r: 130px;
+    }
+    .step-btn{
+      width: 112px;
+      height: 78px;
+    }
+  }
+  
   
