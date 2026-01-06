@@ -305,7 +305,6 @@
     position:absolute;
     left:0; right:0; bottom:0;
     height: 90px;
-    background: linear-gradient(to top, var(--bg), rgba(0,0,0,0));
     pointer-events:none;
   }
   
@@ -387,8 +386,8 @@
     position:absolute;
     inset:-2px;
     background:
-      radial-gradient(800px 260px at 50% 0%, rgba(45,30,245,0.18), transparent 60%),
-      radial-gradient(800px 260px at 10% 30%, rgba(14,165,233,0.12), transparent 60%);
+      radial-gradient(800px 260px at 50% 0%, rgba(4, 59, 36, 0.18), transparent 60%),
+      radial-gradient(800px 260px at 10% 30%, rgba(22, 103, 69, 0.12), transparent 60%);
     pointer-events:none;
     opacity: .9;
   }
@@ -1026,7 +1025,7 @@ body.contact-page{
   .about-page .about-hero-bg{
     position: absolute;
     inset: 0;
-    background: url("images/about.png") center/cover no-repeat;
+    background: url("images/about.jpg") center/cover no-repeat;
     z-index: 0;
   }
   
@@ -1055,7 +1054,7 @@ body.contact-page{
     right: 6% !important;
     bottom: 0 !important;
   
-    width: 500px;; /* ⬅️ זה מה שמגדיל */
+    width: 400px;; /* ⬅️ זה מה שמגדיל */
     max-width: none !important;
   
     margin: 0 !important;
@@ -1973,6 +1972,96 @@ body.service-consulting{
     .step-btn{
       width: 112px;
       height: 78px;
+    }
+  }
+  /* =========================
+   ABOUT PAGE – MOBILE FIX
+   ========================= */
+
+/* כללית – שהhero יהיה “מסגרת” לתמונה המוחלטת */
+.about-page .about-hero{
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* טאבלט ומטה */
+  @media (max-width: 900px){
+  
+    /* מבטלים את הדחיפה ימינה */
+    .about-page .about-hero-inner{
+      padding-right: 0 !important;
+      padding-top: 36px !important;
+      padding-bottom: 24px !important;
+      text-align: center;
+    }
+  
+    /* כפתורים במרכז */
+    .about-page .about-hero-actions{
+      justify-content: center;
+    }
+  
+    /* התמונה: במקום absolute ענק – הופכת לבלוק רגיל מתחת לטקסט */
+    .about-page .about-hero-photo{
+      position: static !important;
+      width: min(420px, 86vw) !important;
+      margin: 18px auto 0 !important;
+      right: auto !important;
+      bottom: auto !important;
+    }
+  
+    .about-page .about-hero-photo img{
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.35)) !important;
+    }
+  
+    /* טקסטים קצת קטנים יותר */
+    .about-page .about-hero-title{
+      font-size: clamp(28px, 7vw, 44px) !important;
+    }
+  
+    .about-page .about-hero-lead,
+    .about-page .about-hero-text{
+      font-size: 15px !important;
+      line-height: 1.9 !important;
+    }
+  }
+  
+  /* ממש קטן */
+  @media (max-width: 480px){
+    .about-page .about-hero-inner{
+      padding-top: 26px !important;
+    }
+    .about-page .about-hero-photo{
+      width: min(340px, 90vw) !important;
+    }
+  }
+  @media (max-width: 900px){
+
+    .container.split{
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  
+    /* התמונה קודם */
+    .split-media{
+      order: 1;
+      display: flex;
+      justify-content: center;
+    }
+  
+    /* המלל מתחת */
+    .split-text{
+      order: 2;
+      text-align: center;
+    }
+  
+    .split-media img{
+      width: 240px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 50%;
     }
   }
   
